@@ -7,7 +7,7 @@ export function createDb({
 }: Pick<IUnleashConfig, 'db' | 'getLogger'>): Knex {
     const logger = getLogger('db-pool.js');
     return knex({
-        client: 'pg',
+        client: 'cockroachdb',
         version: db.version,
         connection: {
             ...db,
